@@ -1,602 +1,518 @@
+
+/* =========================
+   Основні налаштування
+========================= */
+
 :root {
-  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-    "Source Han Sans CN", sans-serif;
+  --background: #ffffff;
+  --section-background: #d5dfff;
+  --text-color: #000000;
+  --secondary-text: #a6a6a6;
+
+  --font-main: "Inter", sans-serif;
+  --font-profile: "Iosevka Charon", monospace;
+
+  --content-width: 1280px;
 }
 
-.main-container {
-  overflow: hidden;
-}
-
-.main-container,
-.main-container * {
+* {
   box-sizing: border-box;
 }
 
-input,
-select,
-textarea,
-button {
-  outline: 0;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
 }
 
-.main-container {
-  position: relative;
-  width: 1920px;
-  height: 5175px;
-  margin: 0 auto;
-  background: #ffffff;
-  overflow: hidden;
+body {
+  margin: 0;
+  color: var(--text-color);
+  background: var(--background);
+  font-family: var(--font-main);
 }
-.navigation-row {
-  position: relative;
-  width: 1283px;
-  height: 39px;
-  margin: 44px 0 0 320px;
-  z-index: 9;
-}
-.home-link {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 39px;
-  top: 0;
-  left: 0;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 6;
-}
-.about-link {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 39px;
-  top: 0;
-  left: 320px;
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 7;
-}
-.portfolio-link {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 39px;
-  top: 0;
-  left: calc(50% - -8.5px);
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 8;
-}
-.contact-link {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 39px;
-  top: 0;
-  left: calc(50% - -369.5px);
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 9;
-}
-.rectangle {
-  position: relative;
-  width: 1920px;
-  height: 957px;
-  margin: 45px 0 0 0;
-  background: #d5dfff;
-  overflow: visible auto;
-}
-.divider-line {
-  position: relative;
-  width: 1280px;
-  height: 4px;
-  margin: -4px 0 0 320px;
-  background: url(https://static.codia.ai/image/2026-11-03/KoCPQBo4fL.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 5;
-}
-.about-title {
+
+img {
   display: block;
-  position: relative;
-  height: 77px;
-  margin: 306px 0 0 796px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header,
+.about-section,
+.portfolio-section,
+.contacts-section {
+  width: 100%;
+}
+
+/* =========================
+   Навігація
+========================= */
+
+.site-header {
+  padding: 44px 24px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.navigation__link {
+  color: var(--secondary-text);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navigation__link:hover,
+.navigation__link--active {
+  color: var(--text-color);
+}
+
+/* =========================
+   Загальні заголовки
+========================= */
+
+.section-title {
+  margin: 0;
   font-size: 64px;
   font-weight: 600;
-  line-height: 77px;
-  text-align: left;
-  white-space: nowrap;
   letter-spacing: 3.2px;
-  z-index: 23;
+  text-align: center;
 }
-.intro-text {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 1270px;
-  height: 468px;
-  margin: 39px 0 0 325px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+
+.subsection-title {
+  margin: 0;
   font-size: 32px;
   font-weight: 600;
-  line-height: 38.727px;
+  letter-spacing: 1.6px;
   text-align: center;
-  letter-spacing: 1.6px;
-  z-index: 13;
 }
-.language-label {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  width: 39px;
-  height: 71px;
-  top: 52px;
-  left: 1564px;
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 38.727px;
-  text-align: left;
-  letter-spacing: 1.6px;
-  transform: rotate(-90deg);
-  z-index: 12;
+
+/* =========================
+   Секція "Про мене"
+========================= */
+
+.about-section {
+  position: relative;
+  min-height: 957px;
+  padding: 95px 24px 70px;
+  background: var(--section-background);
 }
-.last-name {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+
+.about-section::before {
   position: absolute;
-  height: 61px;
-  top: 100px;
-  left: 320px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+  top: 0;
+  left: 50%;
+  width: min(var(--content-width), calc(100% - 48px));
+  height: 4px;
+  background: #000000;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.about-section__top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-name__surname {
   font-size: 48px;
   font-weight: 400;
-  line-height: 58.091px;
-  text-align: left;
-  white-space: nowrap;
-  z-index: 2;
-  -webkit-text-stroke: 1.5px #000000;
+  -webkit-text-stroke: 1px currentColor;
 }
-.profile-details {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  width: 284px;
-  height: 82px;
-  top: 128px;
-  left: calc(50% - 142px);
-  color: #000000;
-  font-family: Iosevka Charon, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 40.96px;
-  text-align: left;
-  text-overflow: initial;
-  z-index: 4;
-  overflow: hidden;
-}
-.separator {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 11px;
-  top: 134px;
-  left: 1564px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 11px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  transform: rotate(-90deg);
-  z-index: 11;
-}
-.first-name {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  height: 78px;
-  top: 140px;
-  left: 320px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+
+.profile-name__first {
+  margin: -4px 0 0;
   font-size: 64px;
   font-weight: 400;
-  line-height: 77.455px;
-  text-align: left;
-  white-space: nowrap;
   letter-spacing: 3.2px;
-  z-index: 3;
-  -webkit-text-stroke: 1px #000000;
+  -webkit-text-stroke: 1px currentColor;
 }
-.language-label-1 {
+
+.profile-details {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  width: 39px;
-  height: 66px;
-  top: 156px;
-  left: 1564px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+  flex-direction: column;
+  font-family: var(--font-profile);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.language-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   font-size: 32px;
   font-weight: 500;
-  line-height: 38.727px;
-  text-align: left;
-  letter-spacing: 1.6px;
-  transform: rotate(-90deg);
-  z-index: 10;
+  color: var(--secondary-text);
 }
-.portfolio-title {
-  display: block;
-  position: relative;
-  height: 77px;
-  margin: 45px 0 0 777px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 77px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 3.2px;
-  z-index: 24;
+
+.language-switch__separator {
+  color: var(--text-color);
+  transform: rotate(90deg);
 }
-.software-title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 556px;
-  height: 38px;
-  margin: 109px 0 0 682px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+
+.language-switch__active {
+  color: var(--text-color);
+}
+
+.about-section__content {
+  max-width: 1270px;
+  margin: 145px auto 0;
+}
+
+.about-description {
+  margin-top: 39px;
   font-size: 32px;
   font-weight: 600;
-  line-height: 38px;
-  text-align: center;
-  white-space: nowrap;
+  line-height: 1.21;
   letter-spacing: 1.6px;
-  z-index: 16;
+  text-align: center;
 }
-.flex-row {
-  display: flex;
-  align-items: center;
+
+.about-description p {
+  margin: 0 0 24px;
+}
+
+/* =========================
+   Секція портфоліо
+========================= */
+
+.portfolio-section {
+  padding: 45px 24px 70px;
+}
+
+.software-section {
+  margin-top: 109px;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 256px);
   justify-content: space-between;
-  position: relative;
-  width: 1270px;
-  height: 256px;
-  margin: 108px 0 0 325px;
-  z-index: 28;
+  gap: 40px;
+
+  max-width: 1270px;
+  margin: 108px auto 0;
 }
-.container {
-  flex-shrink: 0;
-  position: relative;
+
+.software-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.software-item img {
   width: 256px;
-  height: 256px;
-  background: url(https://static.codia.ai/image/2026-11-03/OfNVSmS83H.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 26;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
-.blender-icon {
-  flex-shrink: 0;
-  position: relative;
-  width: 256px;
-  height: 256px;
-  background: url(https://static.codia.ai/image/2026-11-03/LKkORYopHB.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 27;
-}
-.fl-studio-icon {
-  flex-shrink: 0;
-  position: relative;
-  width: 256px;
-  height: 256px;
-  background: url(https://static.codia.ai/image/2026-11-03/0QZyVW7wX7.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 28;
-}
-.flex-row-2 {
-  position: relative;
-  width: 1166px;
-  height: 38px;
-  margin: 20px 0 0 396px;
-  z-index: 22;
-}
-.unity-label {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: absolute;
-  width: 114px;
-  height: 38px;
-  top: 0;
-  left: calc(50% - 583px);
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
+
+.software-item span {
+  color: var(--secondary-text);
   font-size: 32px;
   font-weight: 600;
-  line-height: 38px;
-  text-align: center;
-  white-space: nowrap;
   letter-spacing: 1.6px;
-  z-index: 14;
 }
-.blender-label {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: absolute;
-  width: 148px;
-  height: 38px;
-  top: 0;
-  left: calc(50% - 93px);
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
+
+/* =========================
+   Роботи
+========================= */
+
+.works-section {
+  width: calc(100% + 48px);
+  margin: 70px -24px 0;
+  padding: 39px 24px 70px;
+  background: var(--section-background);
+}
+
+.work-item {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.work-item img {
+  height: auto;
+  object-fit: cover;
+}
+
+.work-item figcaption {
+  margin-top: 64px;
   font-size: 32px;
   font-weight: 600;
-  line-height: 38px;
-  text-align: center;
-  white-space: nowrap;
+  line-height: 1.21;
   letter-spacing: 1.6px;
-  z-index: 15;
-}
-.fl-studio-label {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: absolute;
-  width: 190px;
-  height: 38px;
-  top: 0;
-  left: calc(50% - -393px);
-  color: #a6a6a6;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38px;
   text-align: center;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 22;
 }
-.rectangle-3 {
-  position: relative;
-  width: 1920px;
-  height: 2711px;
-  margin: 70px 0 0 0;
-  font-size: 0px;
-  background: #d5dfff;
-  z-index: 1;
-  overflow: visible auto;
+
+.work-item--concept {
+  max-width: 1237px;
+  margin-top: 128px;
 }
-.works-title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 556px;
-  height: 38px;
-  margin: 39px 0 0 682px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38px;
-  text-align: center;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 17;
+
+.work-item--models {
+  max-width: 1078px;
+  margin-top: 64px;
 }
-.concept-image {
-  position: relative;
-  width: 1237px;
-  height: 656px;
-  margin: 128px 0 0 325px;
-  background: url(https://static.codia.ai/image/2026-11-03/vybKjO9hy1.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 29;
-}
-.concept-caption {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 556px;
-  height: 78px;
-  margin: 64px 0 0 682px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: center;
-  letter-spacing: 1.6px;
-  z-index: 18;
-}
+
 .model-gallery {
-  position: relative;
-  width: 1078px;
-  height: 656px;
-  margin: 64px 0 0 421px;
-  z-index: 31;
+  display: grid;
+  grid-template-columns: 453fr 625fr;
+  gap: 0;
 }
-.model-image {
-  position: absolute;
-  width: 453px;
+
+.model-gallery img {
+  width: 100%;
   height: 656px;
-  top: 0;
-  left: 0;
-  background: url(https://static.codia.ai/image/2026-11-03/mLfWuVPWHx.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 30;
+  object-fit: cover;
 }
-.model-image-4 {
-  position: absolute;
-  width: 625px;
-  height: 656px;
-  top: 0;
-  left: 453px;
-  background: url(https://static.codia.ai/image/2026-11-03/b64d3XLrdn.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 31;
+
+.work-item--artwork {
+  max-width: 1280px;
+  margin-top: 41px;
 }
-.model-caption {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 556px;
-  height: 39px;
-  margin: 64px 0 0 682px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
+
+/* =========================
+   Контакти
+========================= */
+
+.contacts-section {
+  padding: 108px 24px 70px;
+}
+
+.contacts-description {
+  max-width: 568px;
+  margin: 64px auto 0;
   font-size: 32px;
   font-weight: 600;
-  line-height: 38.727px;
-  text-align: center;
-  white-space: nowrap;
+  line-height: 1.21;
   letter-spacing: 1.6px;
-  z-index: 19;
-}
-.work-photo {
-  position: relative;
-  width: 1280px;
-  height: 720px;
-  margin: 41px 0 0 320px;
-  background: url(https://static.codia.ai/image/2026-11-03/076oLKJdgW.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 34;
-}
-.work-caption {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 556px;
-  height: 39px;
-  margin: 41px 0 0 682px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
   text-align: center;
-  white-space: nowrap;
-  letter-spacing: 1.6px;
-  z-index: 20;
 }
-.contact-title {
-  display: block;
-  position: relative;
-  height: 77px;
-  margin: 108px 0 0 800px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 77px;
-  text-align: left;
-  white-space: nowrap;
-  letter-spacing: 3.2px;
-  z-index: 25;
-}
-.contact-description {
+
+.contacts-grid {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: relative;
-  width: 568px;
-  height: 78px;
-  margin: 64px 0 0 670px;
-  color: #000000;
-  font-family: Inter, var(--default-font-family);
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 38.727px;
-  text-align: center;
-  letter-spacing: 1.6px;
-  z-index: 21;
-}
-.contact-links {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: relative;
-  width: 578px;
-  height: 256px;
-  margin: -9px 0 0 670px;
-  z-index: 33;
+  align-items: center;
+  gap: 40px;
+
+  width: 100%;
+  max-width: 578px;
+  margin: 40px auto 0;
 }
-.instagram-icon {
-  flex-shrink: 0;
-  position: relative;
+
+.contact-item img {
   width: 256px;
   height: 256px;
-  background: url(https://static.codia.ai/image/2026-11-03/b5vv6nE6E5.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 32;
+  object-fit: contain;
 }
-.telegram-icon {
-  flex-shrink: 0;
-  position: relative;
-  width: 256px;
-  height: 255px;
-  background: url(https://static.codia.ai/image/2026-11-03/AV6zjVmsXz.png)
-    no-repeat center;
-  background-size: cover;
-  z-index: 33;
+
+/* =========================
+   Адаптивність
+========================= */
+
+@media (max-width: 1100px) {
+  .navigation {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navigation__link {
+    font-size: 24px;
+  }
+
+  .about-section__top {
+    grid-template-columns: 1fr auto;
+    row-gap: 30px;
+  }
+
+  .profile-details {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+  }
+
+  .language-switch {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .about-section__content {
+    margin-top: 90px;
+  }
+
+  .software-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .software-item img {
+    width: 100%;
+  }
+
+  .model-gallery img {
+    height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: 25px 16px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    letter-spacing: 1.5px;
+  }
+
+  .subsection-title {
+    font-size: 21px;
+    letter-spacing: 0.5px;
+  }
+
+  .about-section {
+    min-height: auto;
+    padding: 55px 20px 50px;
+  }
+
+  .profile-name__surname {
+    font-size: 30px;
+  }
+
+  .profile-name__first {
+    font-size: 40px;
+  }
+
+  .profile-details {
+    font-size: 21px;
+  }
+
+  .language-switch {
+    font-size: 20px;
+    gap: 6px;
+  }
+
+  .about-section__content {
+    margin-top: 75px;
+  }
+
+  .about-description {
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+  }
+
+  .about-description p {
+    margin-bottom: 18px;
+  }
+
+  .portfolio-section {
+    padding: 40px 16px;
+  }
+
+  .software-section {
+    margin-top: 65px;
+  }
+
+  .software-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 50px;
+  }
+
+  .software-item {
+    gap: 12px;
+  }
+
+  .software-item span {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  .works-section {
+    width: calc(100% + 32px);
+    margin: 55px -16px 0;
+    padding: 35px 16px 45px;
+  }
+
+  .work-item--concept {
+    margin-top: 60px;
+  }
+
+  .work-item--models {
+    margin-top: 45px;
+  }
+
+  .work-item figcaption {
+    margin-top: 25px;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+  }
+
+  .contacts-section {
+    padding: 65px 16px 45px;
+  }
+
+  .contacts-description {
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+  }
+
+  .contacts-grid {
+    justify-content: center;
+    gap: 35px;
+    margin-top: 35px;
+  }
+
+  .contact-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
 }
